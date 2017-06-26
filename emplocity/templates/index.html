@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ------------- head ------------------->
+<head>
+    <title>Employcity-task</title>
+    <meta charset="utf-8" />
+
+	<!-- Make website fully responsible --->
+	<meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+
+    <!-- ---------- CSS ------------------->
+    <link rel="stylesheet" href="static/css/normalize.css">
+    <link rel="stylesheet" href="static/css/skeleton.css">
+</head>
+
+<!-- ------------- body ------------------->
+<body>
+<br>
+
+<table class="u-full-width">
+  <thead>
+    <tr>
+        <th>File name</th>
+        <th>Pages</th>
+        <th>Words</th>
+        <th>Characters</th>
+        <th>Lines</th>
+        <th>Text</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for files in file %}
+    <tr>
+      <td>{{ files.name }}</td>
+        <td>{{ files.pages }}</td>
+      <td>{{ files.words }}</td>
+      <td>{{ files.characters }}</td>
+        <td>{{ files.lines }}</td>
+        <td><a href="/{{ files.name }}">Full text</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<br>
+</body>
+
+</html>
